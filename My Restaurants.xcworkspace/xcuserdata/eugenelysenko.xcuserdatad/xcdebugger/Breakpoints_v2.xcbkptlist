@@ -1,38 +1,54 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Bucket
-   uuid = "077FAE49-8E5E-4996-B829-65D7CE9D0B0E"
+   uuid = "867CFE4B-1C64-462E-8D07-D8BCE17AF1F3"
    type = "0"
    version = "2.0">
    <Breakpoints>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "1586F5F8-69FE-4EAC-B984-C0A026443B91"
+            uuid = "12A42874-1853-4DA5-A3EC-C49B4C955F70"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "My Restaurants/ViewControllers/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "81"
-            endingLineNumber = "81"
-            landmarkName = "searchRestaurants(for:)"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "resetData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "6B598A95-5705-46E4-B3E1-8117E984BC69"
+            uuid = "5FEE2FA6-E00D-499A-9C42-603705D77E28"
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "My Restaurants/ViewControllers/TVC/SearchTableViewCell.swift"
+            filePath = "My Restaurants/ViewControllers/SearchViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "oddCell(odd:)"
+            startingLineNumber = "293"
+            endingLineNumber = "293"
+            landmarkName = "updateSearchResults(for:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "15183758-320C-4907-8918-A1AD89729A43"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "My Restaurants/ViewControllers/SearchViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "199"
+            endingLineNumber = "199"
+            landmarkName = "removeCell(resId:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

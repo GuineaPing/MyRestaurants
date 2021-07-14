@@ -6,6 +6,7 @@
 //
 
 struct Restaurants: Decodable {
+    
     let results_found: Int
     let results_start: Int
     let results_shown: Int
@@ -17,4 +18,5 @@ struct Restaurants: Decodable {
       case results_shown
       case all = "restaurants"
     }
+    
 }

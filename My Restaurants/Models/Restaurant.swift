@@ -27,7 +27,7 @@ struct Restaurant: Decodable {
     }
 }
 
-extension RestaurantElement: Displayable {
+extension RestaurantElement: RestaurantDisplayable {
     var labelId: String {
         element.id
     }
@@ -40,6 +40,14 @@ extension RestaurantElement: Displayable {
     
     var labelAddress: String {
         element.location.address
+    }
+    
+    var lableLatitude: String {
+        element.location.latitude
+    }
+    
+    var lablelongitude: String {
+        element.location.longitude
     }
     
 }
