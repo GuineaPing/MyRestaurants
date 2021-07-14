@@ -46,6 +46,7 @@
 		059F2E41269A2CB1007B76FD /* Settings.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059F2E40269A2CB1007B76FD /* Settings.swift */; };
 		05B06186269DD05A006B6E31 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B06185269DD05A006B6E31 /* Favorites.swift */; };
 		05B06187269DD83C006B6E31 /* Favorites.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05B06185269DD05A006B6E31 /* Favorites.swift */; };
+		05C7A9ED269F8157000E2D5B /* BaseTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05C7A9EC269F8157000E2D5B /* BaseTableViewController.swift */; };
 		05CB1DD7269ED59B00631190 /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB1DD6269ED59B00631190 /* MapViewController.swift */; };
 		05CB1DD9269ED8F900631190 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05CB1DD8269ED8F900631190 /* BaseViewController.swift */; };
 		05E8BC0E269F1C8B008540F0 /* RestaurantViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 05E8BC0D269F1C8B008540F0 /* RestaurantViewController.swift */; };
@@ -94,6 +95,7 @@
 		059F2E372699AD52007B76FD /* SearchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewCell.swift; sourceTree = "<group>"; };
 		059F2E40269A2CB1007B76FD /* Settings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Settings.swift; sourceTree = "<group>"; };
 		05B06185269DD05A006B6E31 /* Favorites.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Favorites.swift; sourceTree = "<group>"; };
+		05C7A9EC269F8157000E2D5B /* BaseTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTableViewController.swift; sourceTree = "<group>"; };
 		05CB1DD6269ED59B00631190 /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
 		05CB1DD8269ED8F900631190 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		05E8BC0D269F1C8B008540F0 /* RestaurantViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantViewController.swift; sourceTree = "<group>"; };
@@ -227,6 +229,7 @@
 			children = (
 				058EDBD8269CDDDF00709F6B /* TableViewController.swift */,
 				05CB1DD8269ED8F900631190 /* BaseViewController.swift */,
+				05C7A9EC269F8157000E2D5B /* BaseTableViewController.swift */,
 			);
 			path = Base;
 			sourceTree = "<group>";
@@ -448,6 +451,7 @@
 				051A3F1326989AD300D5640A /* AppDelegate.swift in Sources */,
 				05E8BC0E269F1C8B008540F0 /* RestaurantViewController.swift in Sources */,
 				058EDBC5269CA23A00709F6B /* Api.swift in Sources */,
+				05C7A9ED269F8157000E2D5B /* BaseTableViewController.swift in Sources */,
 				058EDBCF269CC60600709F6B /* User.swift in Sources */,
 				051A3F2D2698D9C800D5640A /* RestaurantDisplayable.swift in Sources */,
 				059F2E382699AD52007B76FD /* SearchTableViewCell.swift in Sources */,
