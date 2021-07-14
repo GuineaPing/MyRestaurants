@@ -15,8 +15,17 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="meal-big" translatesAutoresizingMaskIntoConstraints="NO" id="bvO-oD-wjb">
+                                <rect key="frame" x="79" y="320" width="256" height="256"/>
+                            </imageView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="bvO-oD-wjb" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" id="1j4-h4-ZRF"/>
+                            <constraint firstItem="bvO-oD-wjb" firstAttribute="centerY" secondItem="Ze5-6b-2t3" secondAttribute="centerY" id="Fth-uc-VOV"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -25,6 +34,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="meal-big" width="256" height="256"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

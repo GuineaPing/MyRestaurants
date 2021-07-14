@@ -7,7 +7,7 @@
 
 import UIKit
 
-class ReviewsViewController: BaseTableViewController {
+class ReviewsViewController: TableViewController {
     
     @IBOutlet weak var labelTitle: UILabel!
     

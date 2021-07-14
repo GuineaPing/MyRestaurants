@@ -8,11 +8,13 @@
 import UIKit
 import Alamofire
 
-class SearchViewController: BaseTableViewController, SearchTableViewCellProtocol, FavoritesProtocol {
+
+class SearchViewController: TableViewController, SearchTableViewCellProtocol, FavoritesProtocol {
 
     
     @IBOutlet weak var labelCounter: UILabel!
     
+    let appTitle: String = Settings.title
     // loaded restaurants
     var data: [RestaurantDisplayable] = []
     // favorites that keeps in UserDefaults
@@ -29,8 +31,13 @@ class SearchViewController: BaseTableViewController, SearchTableViewCellProtocol
     // selected restaurant for reviews call
     var selectedResId: String = ""
     var selectedResTitle: String = ""
+    var selectedRow: Int = 0
     // search / favorites status
     var isFavorites: Bool = false
+    
+    let segueReviews: String = "showReviews"
+    let segueMap: String = "showMap"
+    let segueRestaurant: String = "showRestaurant"
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -118,7 +125,7 @@ class SearchViewController: BaseTableViewController, SearchTableViewCellProtocol
     
     func updateCounter() {
         let counterTitle: String = isFavorites ? "Favorites" : "Search"
-        self.labelCounter.text = (counter == 0) ? "no result" : "\(counterTitle): \(currentIndex) / \(counter)"
+        self.labelCounter.text = (counter == 0) ? "no result" : "\(appTitle)\n\(counterTitle): \(currentIndex) / \(counter)"
     }
     
     func loadData(mask: String, forced: Bool = false) {
@@ -213,7 +220,19 @@ class SearchViewController: BaseTableViewController, SearchTableViewCellProtocol
             ind += 1
         }
     }
+    
+    // MARK: - cell events
 
+    func callReviews(resId: String, resTitle: String) {
+        selectedResId = resId
+        selectedResTitle = resTitle
+        performSegue(withIdentifier: segueReviews, sender: nil)
+    }
+    
+    func callMap(resId: String) {
+        performSegue(withIdentifier: segueMap, sender: resId)
+    }
+    
     // MARK: - actions
     
     @objc func actionFavorites() {
@@ -230,7 +249,7 @@ class SearchViewController: BaseTableViewController, SearchTableViewCellProtocol
     }
     
     @objc func actionMap() {
-        
+        performSegue(withIdentifier: segueMap, sender: nil)
     }
     
 }
@@ -253,6 +272,7 @@ extension SearchViewController: UITableViewDataSource {
         let item = data[indexPath.row]
         cell.labelTitle?.text = item.labelName
         cell.labelLocation?.text = item.labelAddress
+        cell.totalReviews = item.labelTotalReviews
         cell.isFavorite = favorites.exists(resId: item.labelId)
         cell.resId = item.labelId
         cell.delegate = self;
@@ -261,11 +281,35 @@ extension SearchViewController: UITableViewDataSource {
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let destinationVC = segue.destination as? ReviewsViewController else {
-          return
-        }
-        destinationVC.resId = selectedResId
-        destinationVC.resTitle = selectedResTitle
+        switch segue.identifier {
+            case segueReviews: do {
+                guard let vc = segue.destination as? ReviewsViewController else {
+                  return
+                }
+                vc.resId = selectedResId
+                vc.resTitle = selectedResTitle
+            }
+            case segueMap: do {
+                guard let vc = segue.destination as? MapViewController else {
+                  return
+                }
+                vc.data = data
+                if let resId: String  = sender as? String {
+                    vc.resId = resId
+                }
+            }
+            case segueRestaurant: do {
+                guard let vc = segue.destination as? RestaurantViewController else {
+                    return
+                }
+                let item: RestaurantDisplayable = data[selectedRow]
+                vc.restaurants = [item]
+            }
+            case .none: do {
+                }
+            case .some(_): do {
+                }
+            }
     }
      
 }
@@ -275,10 +319,8 @@ extension SearchViewController: UITableViewDataSource {
 extension SearchViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, willSelectRowAt indexPath: IndexPath) -> IndexPath? {
-          let item: RestaurantDisplayable = data[indexPath.row]
-          selectedResId = item.labelId
-        selectedResTitle = item.labelName
-          return indexPath
+        selectedRow = indexPath.row
+        return indexPath
     }
     
 }

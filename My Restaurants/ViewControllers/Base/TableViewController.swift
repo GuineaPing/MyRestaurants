@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseTableViewController: UIViewController {
+class TableViewController: UIViewController {
 
     @IBOutlet var tableView: UITableView!
     

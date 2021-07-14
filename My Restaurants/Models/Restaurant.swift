@@ -18,12 +18,14 @@ struct Restaurant: Decodable {
     let name: String
     let url: String
     let location: Location
+    let all_reviews_count: Int
     
     enum CodingKeys: String, CodingKey {
         case id
         case name
         case url
         case location
+        case all_reviews_count
     }
 }
 
@@ -42,12 +44,16 @@ extension RestaurantElement: RestaurantDisplayable {
         element.location.address
     }
     
-    var lableLatitude: String {
-        element.location.latitude
+    var labelLatitude: Double {
+        Double(element.location.latitude) ?? 0
     }
     
-    var lablelongitude: String {
-        element.location.longitude
+    var labelLongitude: Double {
+        Double(element.location.longitude) ?? 0
+    }
+    
+    var labelTotalReviews: Int {
+        element.all_reviews_count
     }
     
 }
