@@ -13,4 +13,7 @@ struct Settings {
     static let userKeyVal: String = "2b3a8c2baa6d953047bc375668d2988a"
     static let userKey: HTTPHeaders = ["user-key":userKeyVal]
     static let favoritesName: String = "FavoritesStringArray"
+    static let segueReviews: String = "showReviews"
+    static let segueMap: String = "showMap"
+    static let segueRestaurant: String = "showRestaurant"
  }

@@ -19,6 +19,9 @@ struct Restaurant: Decodable {
     let url: String
     let location: Location
     let all_reviews_count: Int
+    let cuisines: String
+    let timings: String
+    let highlights: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
@@ -26,6 +29,9 @@ struct Restaurant: Decodable {
         case url
         case location
         case all_reviews_count
+        case cuisines
+        case timings
+        case highlights
     }
 }
 
@@ -33,7 +39,7 @@ extension RestaurantElement: RestaurantDisplayable {
     var labelId: String {
         element.id
     }
-    var labelName: String {
+    var labelTitle: String {
         element.name
     }
     var labelUrl: String {
@@ -54,6 +60,18 @@ extension RestaurantElement: RestaurantDisplayable {
     
     var labelTotalReviews: Int {
         element.all_reviews_count
+    }
+    
+    var labelCuisines: String {
+        element.cuisines
+    }
+    
+    var labelTimings: String {
+        element.timings
+    }
+    
+    var labelHighlights: [String] {
+        element.highlights
     }
     
 }

@@ -35,9 +35,7 @@ class SearchViewController: TableViewController, SearchTableViewCellProtocol, Fa
     // search / favorites status
     var isFavorites: Bool = false
     
-    let segueReviews: String = "showReviews"
-    let segueMap: String = "showMap"
-    let segueRestaurant: String = "showRestaurant"
+
 
     let searchController = UISearchController(searchResultsController: nil)
 
@@ -226,11 +224,11 @@ class SearchViewController: TableViewController, SearchTableViewCellProtocol, Fa
     func callReviews(resId: String, resTitle: String) {
         selectedResId = resId
         selectedResTitle = resTitle
-        performSegue(withIdentifier: segueReviews, sender: nil)
+        performSegue(withIdentifier: Settings.segueReviews, sender: nil)
     }
     
     func callMap(resId: String) {
-        performSegue(withIdentifier: segueMap, sender: resId)
+        performSegue(withIdentifier: Settings.segueMap, sender: resId)
     }
     
     // MARK: - actions
@@ -249,7 +247,7 @@ class SearchViewController: TableViewController, SearchTableViewCellProtocol, Fa
     }
     
     @objc func actionMap() {
-        performSegue(withIdentifier: segueMap, sender: nil)
+        performSegue(withIdentifier: Settings.segueMap, sender: nil)
     }
     
 }
@@ -270,7 +268,7 @@ extension SearchViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell: SearchTableViewCell  = tableView.dequeueReusableCell(withIdentifier: "cellItem", for: indexPath) as! SearchTableViewCell
         let item = data[indexPath.row]
-        cell.labelTitle?.text = item.labelName
+        cell.labelTitle?.text = item.labelTitle
         cell.labelLocation?.text = item.labelAddress
         cell.totalReviews = item.labelTotalReviews
         cell.isFavorite = favorites.exists(resId: item.labelId)
@@ -282,14 +280,14 @@ extension SearchViewController: UITableViewDataSource {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-            case segueReviews: do {
+            case Settings.segueReviews: do {
                 guard let vc = segue.destination as? ReviewsViewController else {
                   return
                 }
                 vc.resId = selectedResId
                 vc.resTitle = selectedResTitle
             }
-            case segueMap: do {
+            case Settings.segueMap: do {
                 guard let vc = segue.destination as? MapViewController else {
                   return
                 }
@@ -298,7 +296,7 @@ extension SearchViewController: UITableViewDataSource {
                     vc.resId = resId
                 }
             }
-            case segueRestaurant: do {
+            case Settings.segueRestaurant: do {
                 guard let vc = segue.destination as? RestaurantViewController else {
                     return
                 }

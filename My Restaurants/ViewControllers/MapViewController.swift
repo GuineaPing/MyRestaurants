@@ -44,12 +44,12 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         
         for item: RestaurantDisplayable in data {
             if (item.labelId == resId) {
-                title = item.labelName
+                title = item.labelTitle
                 initCenter(latitude: item.labelLatitude, longitude: item.labelLongitude)
             }
             let annotation = MKPointAnnotation();
             annotation.coordinate = CLLocationCoordinate2DMake(item.labelLatitude, item.labelLongitude);
-            annotation.title = item.labelName
+            annotation.title = item.labelTitle
             mapView.addAnnotation(annotation);
         }
     }
@@ -66,7 +66,7 @@ class MapViewController: BaseViewController, MKMapViewDelegate {
         for item: RestaurantDisplayable in data {
             let annotation = MKPointAnnotation();
             annotation.coordinate = CLLocationCoordinate2DMake(item.labelLatitude, item.labelLongitude);
-            annotation.title = item.labelName
+            annotation.title = item.labelTitle
             mapView.addAnnotation(annotation);
             annotations.append(annotation)
         }

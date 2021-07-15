@@ -32,7 +32,8 @@ class BaseTableViewController: UITableViewController {
     // MARK: - actions
 
     @objc func goBack() {
-        self.navigationController?.popToRootViewController(animated: true)
+        // self.navigationController?.popToRootViewController(animated: true)
+        self.navigationController?.popViewController(animated: true)
     }
 
 }

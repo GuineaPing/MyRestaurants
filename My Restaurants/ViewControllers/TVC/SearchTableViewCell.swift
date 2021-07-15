@@ -50,8 +50,8 @@ class SearchTableViewCell: UITableViewCell {
     }
 
     func oddCell(odd:Bool) {
-        backgroundColor = odd ? UIColor(named:"color-grey-lighter") : UIColor(named:"color-white")
-        let buttonBackground: UIColor? = odd ? UIColor(named:"color-white") : UIColor(named:"color-grey-lighter")
+        backgroundColor = odd ? UIColor(named:"color-grey-lighter") : UIColor(named:"color-grey-navigation")
+        let buttonBackground: UIColor? = odd ? UIColor(named:"color-grey-navigation") : UIColor(named:"color-grey-lighter")
         buttonReviews.backgroundColor = buttonBackground
         buttonMap.backgroundColor = buttonBackground
     }
