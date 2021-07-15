@@ -15,12 +15,13 @@ class RestaurantViewController: BaseTableViewController {
     @IBOutlet weak var labelCuisines: UILabel!
     @IBOutlet weak var labelTimings: UILabel!
     @IBOutlet weak var labelHighlights: UILabel!
+    @IBOutlet weak var buttonUrl: UIButton!
     @IBOutlet weak var mapView: MKMapView!
     
     var restaurants: [RestaurantDisplayable] = []
-    var resId = ""
-    var resTitle = ""
-    var resUrl = ""
+    var resId:String = ""
+    var resTitle:String = ""
+    var resUrl:String = ""
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -46,6 +47,11 @@ class RestaurantViewController: BaseTableViewController {
         resId = restaurant.labelId
         resTitle = restaurant.labelTitle
         resUrl = restaurant.labelUrl
+        if ((URL(string: resUrl)) == nil) {
+            buttonUrl.isHidden = true;
+        } else {
+            buttonUrl.isHidden = false;
+        }
         
         labelTitle.text = restaurant.labelTitle
         labelLocation.text = restaurant.labelAddress
@@ -100,9 +106,10 @@ class RestaurantViewController: BaseTableViewController {
     }
     
     @IBAction func actionUrl(_ sender: Any) {
-        let url: URL = URL(string: resUrl)!
-        print(resUrl)
-        UIApplication.shared.open(url , options: [:], completionHandler: nil)
+        if let url: URL = URL(string: resUrl) {
+            // print(resUrl)
+            UIApplication.shared.open(url , options: [:], completionHandler: nil)
+        }
     }
     
 }

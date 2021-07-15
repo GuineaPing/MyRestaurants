@@ -426,6 +426,7 @@
                     </tableView>
                     <navigationItem key="navigationItem" id="Saf-y9-wOz"/>
                     <connections>
+                        <outlet property="buttonUrl" destination="NjY-Sm-2B1" id="xvf-xj-ig8"/>
                         <outlet property="labelCuisines" destination="DEN-PO-tlG" id="nGB-9c-XAt"/>
                         <outlet property="labelHighlights" destination="yXN-87-s6y" id="oYg-ye-igA"/>
                         <outlet property="labelLocation" destination="H9E-KA-wtu" id="94J-ay-Tgz"/>
