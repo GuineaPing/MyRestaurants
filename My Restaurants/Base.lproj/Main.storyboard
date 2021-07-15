@@ -397,15 +397,15 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="151" id="HY7-ov-8hj" userLabel="Cell Url">
-                                        <rect key="frame" x="0.0" y="286.33334159851074" width="414" height="151"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="252" id="HY7-ov-8hj" userLabel="Cell Url">
+                                        <rect key="frame" x="0.0" y="286.33334159851074" width="414" height="252"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HY7-ov-8hj" id="b5P-Uw-GtK">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="151"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="252"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="CnE-RG-cah">
-                                                    <rect key="frame" x="0.0" y="10" width="414" height="141"/>
+                                                    <rect key="frame" x="0.0" y="10" width="414" height="242"/>
                                                 </mapView>
                                             </subviews>
                                             <constraints>
